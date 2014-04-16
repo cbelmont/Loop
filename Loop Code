@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<!--
+  Created using jsbin.com
+  Source can be edited via http://jsbin.com/lahos/1/edit
+-->
+<head>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+  <meta charset="utf-8">
+  <title>JS Bin</title>
+
+<style id="jsbin-css">
+
+</style>
+</head>
+<body>
+
+<script>
+var width=400;
+var height=400;
+var paper= Raphael(0,0,width,height);
+var henry=paper.circle(23,200,22);
+
+
+function down(){
+  henry.animate({cx:200, cy:400-22},1000,up);
+}
+
+
+
+function up(){
+henry.animate({cx:400-23, cy:200},1000,upp);
+}
+
+function upp(){
+  henry.animate({cx:200, cy:23},1000,start);
+}
+function start(){
+  henry.animate({cx:23, cy:200},1000,down);
+}
+
+
+down();
+</script>
+</body>
+</html>
